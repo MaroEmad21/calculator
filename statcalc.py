@@ -1,5 +1,4 @@
-import string
-
+#making a statistical calculator to make it easier for non professional people
 #making the main function for all functions
 def main():
     get_n()
@@ -15,6 +14,9 @@ def get_n():
     n = int(n)
     while n > 0:
         try:
+            if n >= 3:
+                print("you can't make more than 2")
+                break
             get_X()
             sample = get_X.sample
             samples.append(sample)
@@ -29,8 +31,9 @@ def get_X():
     while True:
         N = input("N: ")
         try:
+            
             N = int(N)
-            break;
+            break
         except ValueError:
             pass
 
