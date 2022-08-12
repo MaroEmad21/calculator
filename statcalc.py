@@ -1,4 +1,6 @@
-#making a statistical calculator to make it easier for non professional people
+#####making a statistical calculator to make it easier for non professional people#####
+
+
 #making the main function for all functions
 def main():
     get_n()
