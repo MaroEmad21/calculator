@@ -1,13 +1,17 @@
 import numpy as np
-import string
-n = input("how many samples? ")
+
+def main ():
+
+    print("main")
+
 samples = []
 
+# we are getting n 
+def get_N():
+    n = input("how many samples? ")
 
-for N in n:
-    N= input("how many in each population?")
-    for x, i in N:
-        x = int(input(f"x {i}: "))
-        sample = []
-        sample += x
-        samples +=sample
+
+
+
+
+
