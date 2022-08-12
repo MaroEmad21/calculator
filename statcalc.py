@@ -1,9 +1,9 @@
 #####making a statistical calculator to make it easier for non professional people#####
-
-
-#making the main function for all functions
+import numpy as np
+#making the main function for all main functions
 def main():
     get_n()
+    s_main()
 
 #making it global for all variables
 samples=[]
@@ -51,9 +51,39 @@ def get_X():
 
 
     return sample
-    
-    
 
-      
-    
+#it's the house of all secondary functions depending on the input of the user
+def s_main():
+
+    answer  =  input("1.mean \
+                        2.mode\
+                        3.median\
+                        What do you need to be done?     ")
+
+    if answer.lower() == "mean" or answer == "1":
+        mean()
+    elif answer.lower() == "mode" or answer == "2":
+        mode()
+    else:
+        median()       
+
+
+#mean function    
+def mean():
+    meanArr=[]
+    for sample in samples:
+            mean= np.mean(sample,axis=0)
+            meanArr.append(mean)
+            return meanArr
+    print(meanArr)    
+
+#mode function
+def mode():
+    print("mode")
+
+#median funtion
+def median():
+    print("this is median")
+
+
 main()
