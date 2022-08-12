@@ -1,28 +1,8 @@
-import numpy as np
-<<<<<<< HEAD
-
-def main ():
-
-    print("main")
-
-samples = []
-
-# we are getting n 
-def get_N():
-    n = input("how many samples? ")
-
-
-
-
-
-
-=======
 import string
 
 #making the main function for all functions
 def main():
     get_n()
-
 
 #making it global for all variables
 samples=[]
@@ -72,4 +52,3 @@ def get_X():
       
     
 main()
->>>>>>> 6b0da53f36442f46f2a318bfc861a4d803b7b901
