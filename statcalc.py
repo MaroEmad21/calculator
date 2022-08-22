@@ -103,9 +103,16 @@ def median():
         i += 1
 
 
-
 def std():
-    print("standard dev")
+    stdArr=[]
+    for sample in samples:
+        thestd =np.std(sample)
+        stdArr.append(thestd)      
+    i=1
+    for thestd in stdArr:
+
+        print(f"The std of sample {i} is {thestd}")
+        i+=1
 
 
 
