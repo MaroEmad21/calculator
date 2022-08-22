@@ -85,7 +85,13 @@ def mode():
 
 #median funtion
 def median():
-    print("this is median")
-
-
+    medArr=[]
+    for sample in samples:
+        median = np.median(sample)
+        medArr.append(median)
+    print(medArr)
+    i= 1
+    for Themedian in medArr:
+        print(f"The median of sample {i} is {Themedian}")
+        i += 1
 main()
