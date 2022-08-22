@@ -1,5 +1,7 @@
 #####making a statistical calculator to make it easier for non professional people#####
+from statistics import mode
 import numpy as np
+
 #making the main function for all main functions
 def main():
     get_n()
@@ -16,9 +18,6 @@ def get_n():
     n = int(n)
     while n > 0:
         try:
-            if n >= 3:
-                print("you can't make more than 2")
-                break
             get_X()
             sample = get_X.sample
             samples.append(sample)
@@ -58,15 +57,18 @@ def s_main():
     answer  =  input("1.mean \
                         2.mode\
                         3.median    \
-                        What do you need to be done?     ")
+                        4.standard dev \
+                        What do you need to be done? \
+                        Note:    You can type number or the name of method.")
 
     if answer.lower() == "mean" or answer == "1":
         mean()
     elif answer.lower() == "mode" or answer == "2":
-        mode()
-    else:
+        Themode()
+    elif answer.lower() == "median" or answer == "3":
         median()       
-
+    elif answer.lower() == "standard dev" or answer == "4":
+        std()
 
 #mean function    
 def mean():
@@ -80,18 +82,31 @@ def mean():
         print(f"The mean of sample {i} is {Themean}")
         i+=1
 #mode function
-def mode():
-    print("mode")
-
+def Themode():
+    modeArr=[]
+    for sample in samples:
+        themode = mode(sample)
+        modeArr.append(themode)
+    i= 1
+    for themode in modeArr:
+        print(f"The median of sample {i} is {themode}")
+        i += 1
 #median funtion
 def median():
     medArr=[]
     for sample in samples:
         median = np.median(sample)
         medArr.append(median)
-    print(medArr)
     i= 1
     for Themedian in medArr:
         print(f"The median of sample {i} is {Themedian}")
         i += 1
+
+
+
+def std():
+    print("standard dev")
+
+
+
 main()
