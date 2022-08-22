@@ -57,7 +57,7 @@ def s_main():
 
     answer  =  input("1.mean \
                         2.mode\
-                        3.median\
+                        3.median    \
                         What do you need to be done?     ")
 
     if answer.lower() == "mean" or answer == "1":
@@ -72,11 +72,13 @@ def s_main():
 def mean():
     meanArr=[]
     for sample in samples:
-            mean= np.mean(sample,axis=0)
-            meanArr.append(mean)
-            return meanArr
-    print(meanArr)    
+        mean =np.mean(sample)
+        meanArr.append(mean)      
+    i=1
+    for Themean in meanArr:
 
+        print(f"The mean of sample {i} is {Themean}")
+        i+=1
 #mode function
 def mode():
     print("mode")
