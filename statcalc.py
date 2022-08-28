@@ -54,22 +54,30 @@ def get_X():
 #it's the house of all secondary functions depending on the input of the user
 def s_main():
 
-    answer  =  input("1.mean \
+    answer  =  input("""1.mean \
                         2.mode\
                         3.median    \
-                        4.standard dev \
+                        4.all(measures of center) \
+                        5.standard dev \
+                        6.variance \
+                        7.MOS(measures of spread) \
                         What do you need to be done? \
-                        Note:    You can type number or the name of method.")
+                        Note:    You can type number or the name of method.""")
 
     if answer.lower() == "mean" or answer == "1":
         mean()
     elif answer.lower() == "mode" or answer == "2":
         Themode()
     elif answer.lower() == "median" or answer == "3":
-        median()       
-    elif answer.lower() == "standard dev" or answer == "4":
+        median()
+    elif  answer.lower() == "all" or answer == "4":
+        all()       
+    elif answer.lower() == "standard dev" or answer == "5":
         std()
-
+    elif answer.lower() == "varince" or answer == "6":
+        variance()
+    elif answer.lower() == "mos" or answer == "7":
+        MOS()   
 #mean function    
 def mean():
     meanArr=[]
@@ -102,7 +110,7 @@ def median():
         print(f"The median of sample {i} is {Themedian}")
         i += 1
 
-
+#standard deviation
 def std():
     stdArr=[]
     for sample in samples:
@@ -113,6 +121,37 @@ def std():
 
         print(f"The std of sample {i} is {thestd}")
         i+=1
+
+
+# variance
+def variance():
+    varArr=[]
+    for sample in samples:
+        thevar =np.var(sample)
+        varArr.append(thevar)      
+    i=1
+    for thevar in varArr:
+
+        print(f"The std of sample {i} is {thevar}")
+        i+=1
+
+
+# measures of center
+def all():
+    mean()
+    Themode()
+    median()
+
+
+# measures of spread
+def MOS():
+    std()
+    variance()
+
+
+
+
+
 
 
 
